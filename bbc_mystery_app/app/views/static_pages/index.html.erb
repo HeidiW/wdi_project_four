@@ -6,5 +6,6 @@
 	<h5><%= link_to "Signout", session_path(user), method: :delete %>
 	<% else %>
 	<%= link_to "Register", new_user_path, class: "button" %>
+	<%= link_to "Log In", current_user_path, class: "button" %>
 	
 	<% end %>

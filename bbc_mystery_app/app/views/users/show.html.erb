@@ -1,0 +1,9 @@
+<h1>Welcome, <%= @user.name %></h1>
+<h2>Discuss these shows:</h2>
+<ul>
+	<% @shows.each do |show| %>
+	<div>
+		<%= render show %>
+	</div>
+	<% end %>
+</ul>

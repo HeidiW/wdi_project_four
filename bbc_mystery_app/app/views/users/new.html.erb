@@ -1,11 +1,10 @@
+<h2>Create an account</h2>
 <%= form_for :user, url: users_path do |f| %>
  <% if @user.errors.any? %>
   <div id="error_explanation">
   	<ul>
   		<% @user.errors.full_messages.each do |msg| %>
-  		<li>
-  			<%= msg %>
-  		</li>
+  		<li><%= msg %></li>
   		<% end %>
   	</ul>
   </div>
@@ -14,21 +13,24 @@
   	<%= f.label :name %>
   	<%= f.text_field :name, placeholder: "Name" %>
   </div>
+  <br>
   <div class="field">
   	<%= f.label :email %>
-  	<%= text_field :email, placeholder: "Email" %>
+  	<%= f.text_field :email, placeholder: "Email" %>
   </div>
+  <br>
   <div class="field">
-  	<%= label_tag :remember_me , :class => "checkbox vsmall" do %>
-  	<%= check_box_tag :remember_me, 1, params[:remember_me] %>
-  	Remember me
-  <% end %>
+  	<%= f.label :password %>
+  	<%= f.password_field :password, placeholder: "Password" %>
 </div>
 <br>
-<div class="messages">
-	<% flash.each do |name,msg| %>
-	<%= content_tag :div, msg, :id => "flash_#{name}" %>
-	<% end %>
+<div class="field">
+  <%= f.label :repeat_password %>
+  <%= f.password_field :password_confirmation, placeholder: "Repeat Password" %>
+</div>
+<br>
+<div class="actions">
+	<%= f.submit :create_account, value: "Create Account" %>
 </div>
 <% end %>
 
