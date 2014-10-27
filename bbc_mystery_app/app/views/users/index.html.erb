@@ -1,4 +1,8 @@
-<h1 class="welcome-heading">BBC Murder Mystery App</h1>
+<style scoped>
+  .site-header {display: none;}
+</style>
+
+<h1 class="welcome-heading">Friends of Hathaway</h1>
 <h2 class="tagline">Learn about and discuss Sherlock, Luther, Case Histories, and more.</h2>
 <div class="welcome-body">
 	<div class="user-greeting">
@@ -8,11 +12,7 @@
     </h2>
     <% else %>
     <h2 class="login-signup">
-    	Please sign in!
+    	Sign in or sign up!
     </h2>
-    <div class="login-signup-buttons">
-    	<%= link_to "Log-In", current_user_path, class: "button" %>
-    	<%= link_to "Sign-Up", new_user_path, class: "button" %>
-    </div>
     <% end %>
 </div>

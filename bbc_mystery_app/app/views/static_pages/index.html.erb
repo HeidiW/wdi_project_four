@@ -1,11 +1,12 @@
-<h1>Welcome To The BBC Mystery App</h1>
-<p>Discuss your favorite BBC murder series here.</p>
+<h1></h1>
+<p>Discuss your favorite BBC murder mysteries series here.</p>
 <% if session[:user] %>
 	<h2>Hello <%= (user = User.find(session[:user])).name %>
 	</h2>
 	<h5><%= link_to "Signout", session_path(user), method: :delete %>
 	<% else %>
+	<p id="error"><%= flash[:error] %></p>
 	<%= link_to "Register", new_user_path, class: "button" %>
-	<%= link_to "Log In", current_user_path, class: "button" %>
+	<%= link_to "Log In", login_path, class: "button" %>
 	
 	<% end %>

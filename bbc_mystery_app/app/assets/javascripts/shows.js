@@ -1,23 +1,22 @@
-<script type="text/javascript">
-//Sherlock tt1475582
-//Luther tt1474684
-//Case Histories tt1748888
-//New Tricks tt0362357
-//Inspector Lewis tt0874608
+var xhr = new XMLHttpRequest;
 
-// IMDb ID to Search
-var imdbId = "tt1430509";
+xhr.open('GET', 'http://www.omdbapi.com/?t=Sherlock', true);
+xhr.send();
 
-// Send Request
-var http = new ActiveXObject("Microsoft.XMLHTTP");
-http.open("GET", "http://www.omdbapi.com/?i=" + imdbId, false);
-http.send(null);
+xhr.addEventListener('load', function(){
+	console.log("Callback in event has been fired");
+	var parsedResponse = JSON.parse(xhr.response);
+	var ul = document.querySelector("ul");
 
-// Response to JSON
-var omdbData = http.responseText;
-var omdbJSON = eval("(" + omdbData + ")");
+	for(var i = 0; i < parsedResponse.length; i++){
+		var address = parsedResponse[i]["Title"]["Actors"]["Year"]["Plot"];
+		var div = document.createElement("div");
+		li.innerText = address;
+		ul.appendChild(li);
+	}
 
-// Returns Movie Title
-alert(omdbJSON.Title);
+});
 
-</script>
+for(var i = 0; i < 6; i++){
+	console.log(i);
+};

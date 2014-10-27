@@ -11,10 +11,10 @@ class UsersController < ApplicationController
 
 	def create
 		@user = User.new(user_params)
-		if @user.save!
-			redirect_to user_url, notice: "User Successfully Created!"
+		if @user.save
+			redirect_to user_url(@user.id), notice: "Welcome #{name}"
 		else 
-			render 'new'
+			redirect_to root_path, :flash => { :error => @user.errors.full_messages.to_sentence }
 		end
 	end
 

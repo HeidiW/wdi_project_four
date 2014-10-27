@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   
   root 'static_pages#index'
   #root 'users#index'
+  get 'login' => 'sessions#new'
+  resource :session, only: [:create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -16,9 +18,7 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-  resources :users do
-  resources :shows, :sessions, only: [:create, :destroy]
-end
+  resources :users
 =begin
 
       users GET    /users(.:format)          users#index
