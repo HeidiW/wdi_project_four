@@ -19,7 +19,17 @@ html {
 
 .login-signup {
 	background-color: firebrick;
+	vertical-align:left;
 	border-radius: 35%;
 	display: inline-block;
 	padding: 1em;
 }
+
+.sgt_hathaway, .login-signup {
+	height: auto;
+	width: 25%;
+	float: right;
+	margin-right: 500px;
+	opacity: 0.6;
+}
+

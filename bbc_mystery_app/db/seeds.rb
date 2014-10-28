@@ -6,10 +6,13 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Show.delete_all
+
 shows = Show.create([
 	{title: 'Sherlock'},
 	{title: 'Luther'},
 	{title: 'Inspector Lewis'},
 	{title: 'Prime Suspect'},
-	{title: 'Case Histories'}
+	{title: 'New Tricks'}
 ])
+

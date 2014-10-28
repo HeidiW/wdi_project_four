@@ -1,12 +1,12 @@
-.show {
+.show, .the-show {
 	display: table-row;
 }
 
-.poster, .info {
+.poster, .info, .the-show {
 	display: table-cell;
 }
 
-.poster {
+.poster, .the-show {
 	width: 25%;
 }
 
@@ -14,3 +14,4 @@
 	vertical-align: middle;
 	width: 75%;
 }
+

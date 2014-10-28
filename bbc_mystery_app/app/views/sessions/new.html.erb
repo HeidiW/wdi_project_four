@@ -1,4 +1,4 @@
-<h2>Friends of Hathaway Login</h2>
+<h2>Welccome back! Please log in.</h2>
 <h5>"God is in everything"</h5>
 <%= form_tag session_path do %>
 <div class="field">
@@ -20,6 +20,7 @@
 <div class="field">
 	<%= submit_tag "Sign in" %>
 </div>
+<br>
 <div class="messages">
 	<% flash.each do |name, msg| %>
 	<%= content_tag :div, msg, :id => "flash#{name}" %>
