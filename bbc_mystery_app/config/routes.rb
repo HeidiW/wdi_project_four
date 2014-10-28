@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   resources :users
+  resources :shows
 =begin
 
       users GET    /users(.:format)          users#index

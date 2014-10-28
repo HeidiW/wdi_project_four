@@ -18,6 +18,6 @@ class User < ActiveRecord::Base
 			user
 		else
 			nil
-	end
-  end
+		end
+  	end
 end

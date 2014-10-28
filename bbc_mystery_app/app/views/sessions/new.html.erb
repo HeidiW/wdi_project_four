@@ -1,6 +1,6 @@
 <h2>Friends of Hathaway Login</h2>
 <h5>"God is in everything"</h5>
-<%= form_tag login_path do %>
+<%= form_tag session_path do %>
 <div class="field">
 	<%= label_tag :email %>
 	<%= text_field_tag :email, params[:email], :placeholder => "Email address" %>
@@ -16,6 +16,9 @@
 	<%= check_box_tag :remember_me, 1, params[:remember_me] %>
 	Remember me
 	<% end %>
+</div>
+<div class="field">
+	<%= submit_tag "Sign in" %>
 </div>
 <div class="messages">
 	<% flash.each do |name, msg| %>

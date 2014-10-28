@@ -2,8 +2,11 @@
   .site-header {display: none;}
 </style>
 
-<h2 class="tagline">LDiscuss your favorite BBC murder mystery series here.</h2>
-	<div class="show-list">
-    </h2>
-    <% end %>
+<h2>Discuss these shows:</h2>
+<div class="show-list">
+
 </div>
+
+<script>
+	getShows('/shows.json', '.show-list');
+</script>
