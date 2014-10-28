@@ -5,6 +5,7 @@
 	</h2>
 	<h5><%= link_to "Signout", session_path(user), method: :delete %>
 	<% else %>
+	<div class="login-signup-buttons">
 	<p id="error"><%= flash[:error] %></p>
 	<%= link_to "Register", new_user_path, class: "button" %><br>
 	<%= link_to "Log In", login_path, class: "button" %>

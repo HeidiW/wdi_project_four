@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'static_pages#index'
   #root 'users#index'
   get 'login' => 'sessions#new'
+
   resource :session, only: [:create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.

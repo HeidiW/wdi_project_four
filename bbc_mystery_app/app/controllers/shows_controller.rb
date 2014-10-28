@@ -10,7 +10,7 @@ class ShowsController < ApplicationController
 		  format.xml  { render :xml => @shows }
 		  format.json { render :json => @shows }
 		end
-	end
+end
 
 	def show
 		@show = Show.find(params[:id])
