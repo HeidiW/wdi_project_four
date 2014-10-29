@@ -10,3 +10,37 @@ static_pages/index.html.erb
         <%= link_to "Log-In", current_user_path, class: "button" %>
         <%= link_to "Sign-Up", new_user_path, class: "button" %>
     </div>
+
+
+    
+//form to add comments
+<div class="comment-form">
+
+<h2>Start a topic:</h2>
+<%= form_for :comment, url: comments_path do |f| %>
+  <div class="field">
+  	<%= f.label :name %>
+  	<%= f.text_field :name, placeholder: "Name" %>
+  </div>
+  <br>
+  <div class="field">
+  	<%= f.label :copy %>
+  	<%= f.password_field :copy, placeholder: "Enter your comment here" %>
+</div>
+<br>
+<div class="actions">
+	<%= f.submit :post_comment, value: "Publish comment" %>
+</div>
+</div>
+<% end %>
+
+//users/show page
+
+<h2>Discuss these shows:</h2>
+<ul>
+  <% @shows.each do |show| %>
+  <div>
+    <%= render show %>
+  </div>
+  <% end %>
+</ul>

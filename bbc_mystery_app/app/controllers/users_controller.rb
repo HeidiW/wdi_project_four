@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(user_params)
 		if @user.save
-			redirect_to user_url(@user.id), notice: "Welcome!"
+			redirect_to login_path
 		else 
 			redirect_to root_path, :flash => { :error => @user.errors.full_messages.to_sentence }
 		end
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
 
     private 
     def user_params 
-    	params.require(:user).permit(:email, :password, :password_confirmation)
+    	params.require(:user).permit(:email, :password, :password_confirmation, :name)
   end
 end
 

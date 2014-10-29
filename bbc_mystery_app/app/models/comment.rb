@@ -1,3 +1,3 @@
 class Comment < ActiveRecord::Base
-	belongs_to :shows :users
+	belongs_to :show
 end
